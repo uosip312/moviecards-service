@@ -9,20 +9,15 @@ package com.lauracercas.moviecards.service.actor;
 
 import com.lauracercas.moviecards.model.Actor;
 import com.lauracercas.moviecards.repositories.ActorJPA;
-import org.springframework.stereotype.Service;
-import java.util.List;
-
-//Imports añadidos
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class ActorServiceImpl implements ActorService {
 
-    // private final ActorJPA actorJPA;
-    // public ActorServiceImpl(ActorJPA actorJPA) {
-    // this.actorJPA = actorJPA;
-    // }
     @Autowired
     ActorJPA actorJPA;
 
@@ -36,10 +31,6 @@ public class ActorServiceImpl implements ActorService {
         return actorJPA.save(actor);
     }
 
-    // @Override
-    // public Actor getActorById(Integer actorId) {
-    // return actorJPA.getById(actorId);
-    // }
     @Override
     public Actor getActorById(Integer actorId) {
         Optional<Actor> optional = actorJPA.findById(actorId);
